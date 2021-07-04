@@ -10,10 +10,13 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(platform: TargetPlatform.android),
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
-          title: Text('Dicee'),
+          title: Center(
+            child: Text('Dicee'),
+          ),
           backgroundColor: Colors.red,
         ),
         body: DicePage(),
@@ -25,6 +28,32 @@ class App extends StatelessWidget {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: InkWell(
+                onTap: () {
+                  //
+                },
+                child: Image.asset('assets/images/dice1.png'),),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: InkWell(
+                onTap: () {
+                  //
+                },
+                child: Image.asset('assets/images/dice2.png'),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
